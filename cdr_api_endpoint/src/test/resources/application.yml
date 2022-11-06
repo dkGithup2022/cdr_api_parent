@@ -1,25 +1,13 @@
 
-
-spring:
-  profile:
-    active: test
-  tast:
-    scheduling:
-      pool:
-        size: 2
-
 server:
   port: 8082
   tomcat:
     threads:
       max: 300
 
-
 logging:
   file:
-    name: logs/log_v1_1.log
-
-
+    name: logs/logs_on_api.log
 ---
 spring:
   config:

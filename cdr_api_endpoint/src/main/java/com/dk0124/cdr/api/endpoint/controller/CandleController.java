@@ -1,6 +1,7 @@
 package com.dk0124.cdr.api.endpoint.controller;
 
 
+import com.dk0124.cdr.api.endpoint.service.CandleService;
 import com.dk0124.cdr.constants.coinCode.CoinCode;
 import com.dk0124.cdr.constants.vendor.VendorType;
 import com.dk0124.cdr.entity.abstraction.Candle;
@@ -22,23 +23,25 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CandleController {
 
+    private final CandleService candleService;
+
     @RequestMapping("/{vendorCode}/{coinCode}")
     public ResponseEntity cdrApiCandle(
             @PathVariable String vendorCode,
             @PathVariable String coinCode,
-            @RequestParam(required = false) Optional<String> timestamp,
-            @RequestParam(required = false) Optional<String> size
+            @RequestParam(required = false, name = "timestamp") Optional<String> timestampBeforeValidated,
+            @RequestParam(required = false, name = "size") Optional<String> sizeBeforeValidated
     ) {
 
         // validation & fix parameter
 
-        Long t;
-        Integer s;
+        Long timestamp;
+        Integer size;
         VendorType vendorType;
         CoinCode coin;
         try {
-            t = ParamValidator.validateTimestamp(timestamp);
-            s = ParamValidator.validateSize(size);
+            timestamp = ParamValidator.validateTimestamp(timestampBeforeValidated);
+            size = ParamValidator.validateSize(sizeBeforeValidated);
 
             vendorType = ParamValidator.validateVendorCode(vendorCode);
 
@@ -52,10 +55,10 @@ public class CandleController {
 
         //service
 
-        List<Candle> candles = vendorType == VendorType.BITHUMB ?
+        List<Candle> candles = (List<Candle>) candleService.getCandles(vendorType,coin,timestamp,size);
 
 
-        return null;
+        return  ResponseEntity(candles);
 
     }
 

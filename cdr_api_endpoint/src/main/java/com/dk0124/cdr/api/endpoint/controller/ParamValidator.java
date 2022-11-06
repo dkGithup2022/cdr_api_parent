@@ -50,7 +50,7 @@ public class ParamValidator {
         int s;
         if (size.isPresent() && size.get().chars().allMatch(Character::isDigit)) {
             s = Integer.parseInt(size.get());
-            s = s > 1000 ? 1000 : s;
+            s = s > 2000 ? 2000 : s;
         } else {
             s = 200;
         }
