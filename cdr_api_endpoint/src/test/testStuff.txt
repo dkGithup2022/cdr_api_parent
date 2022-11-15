@@ -1,0 +1,32 @@
+
+https://www.baeldung.com/spring-entityscan-vs-componentscan
+Entity scan 이 기본 설정된 entity scan 을 막아버림.
+
+
+1. 테스트 내용
+    1-1) 읽기 요청에 대한 응답 코드
+        정상 반환 200
+        에러 상황에 validator 에러 시, 에러 이유를 명시함을 확인
+
+    1-2) 응답에 있는 메타 데이터에 대한 검증
+        -> res header 의 mediatype 이 명시되어 있는지.
+        ->
+        ->
+
+    1-3) 비즈니스 로직이 적용되었는지 응답 확인
+        -> validator 에 대한 에러 내역 확인 .
+
+    1-4) HATEOA 와 profile 관련 링크가 있는지 확인. (생성 api 응답)
+         - Self ( 조회 )
+         - Update (변경)
+         - events( 목록)
+         - 이게 , restful 한 자원 관점에서 이게 설명이 되야 사용성이 좋은 api 가 나온다라는
+
+         -> 이 읽기의 경우엔, 페이지 링크
+
+
+2. API 문서 만들기
+    요청 문서화
+    응답 문서화
+    링크 문서화
+    Profile 링크 추가

@@ -1,7 +1,7 @@
 package com.dk0124.cdr.api.endpoint.controller;
 
 import com.dk0124.cdr.constants.coinCode.UpbitCoinCode.UpbitCoinCode;
-import com.dk0124.cdr.entity.upbit.tick.coins.UpbitTickKrwAda;
+import com.dk0124.cdr.persistence.entity.upbit.tick.coins.UpbitTickKrwAda;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

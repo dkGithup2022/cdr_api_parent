@@ -1,5 +1,6 @@
 package com.dk0124.cdr.api.endpoint.controller;
 
+import com.dk0124.cdr.api.endpoint.service.CandleService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,13 +16,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
-@ActiveProfiles("sampleDb")
+@ActiveProfiles("test-h2")
 class CandleControllerTest {
 
     @Autowired
     MockMvc mockMvc;
     // mocking 의 dispatcher servlet 생성
     // slicing test, web 서버 안띄움 ( 톰 캣 )
+
+    @Test
+    public void empty(){}
 
     @Test
     @DisplayName("에러 메세지 : 올바르지 않은 벤더 코드")

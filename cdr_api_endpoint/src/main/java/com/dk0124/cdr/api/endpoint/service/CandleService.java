@@ -5,19 +5,18 @@ import com.dk0124.cdr.constants.coinCode.CoinCode;
 import com.dk0124.cdr.constants.coinCode.UpbitCoinCode.UpbitCoinCode;
 import com.dk0124.cdr.constants.coinCode.bithumbCoinCode.BithumbCoinCode;
 import com.dk0124.cdr.constants.vendor.VendorType;
-import com.dk0124.cdr.entity.abstraction.Candle;
-import com.dk0124.cdr.entity.bithumb.candle.BithumbCandle;
-import com.dk0124.cdr.entity.upbit.candle.UpbitCandle;
-import com.dk0124.cdr.repository.bithumb.bithumbCandleRepository.BithumbCandleCommonJpaInterface;
-import com.dk0124.cdr.repository.upbit.upbitCandleRepository.UpbitCandleCommonJpaInterface;
-import com.dk0124.cdr.repositoryPicker.bithumb.BithumbCandleRepositoryPicker;
-import com.dk0124.cdr.repositoryPicker.upbit.UpbitCandleRepositoryPicker;
+import com.dk0124.cdr.persistence.entity.abstraction.Candle;
+import com.dk0124.cdr.persistence.entity.bithumb.candle.BithumbCandle;
+import com.dk0124.cdr.persistence.entity.upbit.candle.UpbitCandle;
+import com.dk0124.cdr.persistence.repository.bithumb.bithumbCandleRepository.BithumbCandleCommonJpaInterface;
+import com.dk0124.cdr.persistence.repository.upbit.upbitCandleRepository.UpbitCandleCommonJpaInterface;
+import com.dk0124.cdr.persistence.repositoryPicker.bithumb.BithumbCandleRepositoryPicker;
+import com.dk0124.cdr.persistence.repositoryPicker.upbit.UpbitCandleRepositoryPicker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service
